@@ -1,5 +1,7 @@
 // Below layout is based upon /u/That-Canadian's planck layout
-#include QMK_KEYBOARD_H
+#include "launchpad.h"
+#include "action_layer.h"
+#include "eeconfig.h"
 
 extern keymap_config_t keymap_config;
 
@@ -10,6 +12,10 @@ extern keymap_config_t keymap_config;
 #define _MEDIA 0
 
 #define _FUNC 15
+
+// Fillers to make layering more clear
+#define _______ KC_TRNS
+#define XXXXXXX KC_NO
 
 // Defines for task manager and such
 #define CALTDEL LCTL(LALT(KC_DEL))
@@ -29,10 +35,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-------------'
  */
 [_MEDIA] = LAYOUT( \
-    KC_MPRV,   KC_MNXT, \
-    KC_MPLY, \
-    KC_VOLD,   KC_VOLU, \
-    MO(_FUNC), KC_MUTE  \
+    KC_MPLY,      KC_MNXT, \
+    KC_F1,      KC_F2, \
+    KC_F3,      KC_F4, \
+    KC_F5,      KC_F6  \
 ),
 
 /* Function
