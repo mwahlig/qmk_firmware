@@ -13,6 +13,8 @@
                                 }
 #endif
 
+#define MOUSEKEY_MAX_SPEED 3
+
 /*
  * MIDI options
  */

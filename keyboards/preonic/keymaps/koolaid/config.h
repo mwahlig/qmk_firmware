@@ -14,6 +14,7 @@
 #endif
 
 #define MUSIC_MASK (keycode != KC_NO)
+#define MOUSEKEY_MAX_SPEED 4
 
 /*
  * MIDI options
