@@ -37,7 +37,6 @@ enum planck_keycodes {
   SHRUG
 };
 
-#define XXXXXXX KC_NO
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 #define NAV MO(_NAV)
