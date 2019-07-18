@@ -3,8 +3,18 @@
 
 #include "config_common.h"
 
+#define ZELDA_PUZZLE_SONG \
+    Q__NOTE(_G5),     \
+    Q__NOTE(_FS5),    \
+    Q__NOTE(_DS5),     \
+    Q__NOTE(_A4),    \
+    Q__NOTE(_GS4),     \
+    Q__NOTE(_E5),     \
+    Q__NOTE(_GS5),     \
+    HD_NOTE(_C6),
+
 #ifdef AUDIO_ENABLE
-    #define STARTUP_SONG SONG(ZELDA_PUZZLE)
+    #define STARTUP_SONG SONG(ZELDA_PUZZLE_SONG)
     // #define STARTUP_SONG SONG(NO_SOUND)
 
     #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
@@ -39,7 +49,6 @@
 /* override number of MIDI tone keycodes (each octave adds 12 keycodes and allocates 12 bytes) */
 //#define MIDI_TONE_KEYCODE_OCTAVES 2
 
-#define NUMBER_OF_ENCODERS 1
 #define ENCODERS_PAD_A { B12 }
 #define ENCODERS_PAD_B { B13 }
 
