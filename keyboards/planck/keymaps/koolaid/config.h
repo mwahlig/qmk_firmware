@@ -23,7 +23,7 @@
                                 }
 #endif
 
-#define MOUSEKEY_MAX_SPEED 3
+#define MOUSEKEY_MAX_SPEED 7
 
 /*
  * MIDI options
@@ -37,6 +37,7 @@
 */
 
 #define MIDI_BASIC
+#define TAPPING_TERM 200
 
 /* enable advanced MIDI features:
    - MIDI notes can be added to the keymap

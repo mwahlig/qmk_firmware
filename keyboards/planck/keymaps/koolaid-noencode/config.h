@@ -2,8 +2,18 @@
 
 #define NO_DEBUG
 
+#define ZELDA_PUZZLE_SONG \
+    Q__NOTE(_G5),     \
+    Q__NOTE(_FS5),    \
+    Q__NOTE(_DS5),     \
+    Q__NOTE(_A4),    \
+    Q__NOTE(_GS4),     \
+    Q__NOTE(_E5),     \
+    Q__NOTE(_GS5),     \
+    HD_NOTE(_C6),
+
 #ifdef AUDIO_ENABLE
-    #define STARTUP_SONG SONG(ZELDA_PUZZLE)
+    #define STARTUP_SONG SONG(ZELDA_PUZZLE_SONG)
     // #define STARTUP_SONG SONG(NO_SOUND)
 
     #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
@@ -12,7 +22,7 @@
                                 }
 #endif
 
-#define MOUSEKEY_MAX_SPEED 3
+#define MOUSEKEY_MAX_SPEED 7
 
 /*
  * MIDI options
@@ -26,6 +36,7 @@
 */
 
 #define MIDI_BASIC
+#define TAPPING_TERM 200
 
 /* enable advanced MIDI features:
    - MIDI notes can be added to the keymap
