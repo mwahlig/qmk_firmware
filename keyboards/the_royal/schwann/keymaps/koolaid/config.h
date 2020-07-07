@@ -1,0 +1,2 @@
+#define MOUSEKEY_MAX_SPEED 7
+#define TAPPING_TERM 200
