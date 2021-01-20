@@ -23,7 +23,8 @@ enum preonic_layers {
   _RAISE,
   _ADJUST,
   _FN,
-  _NAV
+  _NAV,
+  _HYPER
 };
 
 enum preonic_keycodes {
@@ -35,6 +36,8 @@ enum preonic_keycodes {
 
 #define NAV MO(_NAV)
 #define FN MO(_FN)
+#define HYPER MO(_HYPER)
+#define CTL_ESC CTL_T(KC_ESC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -54,9 +57,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT_preonic_grid( \
   KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL, \
   KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,  \
-  KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
+  CTL_ESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RSFT_T(KC_ENT),  \
-  FN     , KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   NAV    , KC_DOWN, KC_UP,   KC_RGHT  \
+  FN     , KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_SPC,  RAISE,   NAV    , FN,      HYPER,   KC_RGHT  \
 ),
 
 /* Lower
@@ -158,6 +161,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_WH_D,  KC_MS_L, KC_MS_D,  KC_MS_R, KC_PGDN,  _______, _______, KC_LEFT, KC_DOWN,  KC_UP,  KC_RGHT,  _______, \
     _______,  _______, _______, _______, _______,  _______,  _______,  _______, _______, _______, _______, _______, \
     _______,  _______, _______, _______, _______,  _______,  _______,  _______, _______, _______, _______, _______ \
+),
+
+[_HYPER] = LAYOUT_preonic_grid(
+    _______,  _______, _______, _______, _______,  _______,  _______,  _______, _______, _______, _______, _______, \
+    _______, HYPR(KC_F1), HYPR(KC_F2), HYPR(KC_F3), HYPR(KC_F4), HYPR(KC_F5), HYPR(KC_F6), HYPR(KC_F7), HYPR(KC_F8), _______, _______, _______, \
+    _______, HYPR(KC_F9), HYPR(KC_F10), HYPR(KC_F11), HYPR(KC_F12), HYPR(KC_F13), HYPR(KC_F14), HYPR(KC_F15), HYPR(KC_F16), _______, _______, _______, \
+    _______, HYPR(KC_F17), HYPR(KC_F18), HYPR(KC_F19), HYPR(KC_F20), HYPR(KC_F21), HYPR(KC_F22), HYPR(KC_F23), HYPR(KC_F24), _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ \
 )
 
 
