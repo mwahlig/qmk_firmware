@@ -2,7 +2,7 @@
 
 enum layers {
     _QWERTY,
-		_GAME,
+    _GAME,
     _NAV,
     _FN,
     _HYPER,
@@ -32,20 +32,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,    KC_P,    KC_LBRC,  KC_RBRC,           KC_BSPC,   \
       KC_ESC, KC_A,    KC_S,    KC_D,    KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,    KC_SCLN, KC_QUOT,  XXXXXXX,             HYPENT,    \
       KC_LSFT, XXXXXXX,   KC_Z,    KC_X,    KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH,  XXXXXXX, KC_RSFT, MO(_FN),     \
-      XXXXXXX, KC_LALT, KC_LGUI,                          NAVSPC,                          XXXXXXX, KC_RGUI,   XXXXXXX, MO(_CODE), XXXXXXX),
+      XXXXXXX, KC_LALT, KC_LGUI,                          KC_SPC,                          XXXXXXX, KC_RGUI,   XXXXXXX, MO(_CODE), XXXXXXX),
 
   [_NAV] = LAYOUT_all(
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,    \
       _______, _______, KC_PGUP, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   \
-      KC_ESC, _______, KC_PGDN, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, _______, XXXXXXX, _______,    \
+      _______, _______, KC_PGDN, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, _______, XXXXXXX, _______,    \
       _______, XXXXXXX, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, XXXXXXX, _______, _______,     \
       XXXXXXX, _______, _______,                          _______,                          XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX),
 
   [_FN] = LAYOUT_all(
       _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12, _______, _______,    \
-      _______, KC_MUTE, KC_VOLD, KC_VOLU, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   \
-      KC_ESC, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______, _______, _______, _______, _______, _______, _______, XXXXXXX, _______,    \
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, XXXXXXX, _______, _______,     \
+      _______, KC_MUTE, KC_VOLD, KC_VOLU, _______, _______, _______, _______, _______, _______, _______, KC_UP, _______, _______,   \
+      KC_ESC, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______, _______, _______, _______, _______, KC_LEFT, KC_RGHT, XXXXXXX, _______,    \
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DOWN, XXXXXXX, _______, _______,     \
       XXXXXXX, _______, _______,                          _______,                          XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX),
 
   [_HYPER] = LAYOUT_all(
@@ -63,7 +63,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       XXXXXXX, XXXXXXX, XXXXXXX,                          XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX),
 };
 
-// Loop
-void matrix_scan_user(void) {
-  // Empty
-};
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case QWERTY:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_QWERTY);
+            }
+            return false;
+            break;
+        case (GAME):
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_GAME);
+            }
+            return false;
+            break;
+    }
+    return true;
+}
