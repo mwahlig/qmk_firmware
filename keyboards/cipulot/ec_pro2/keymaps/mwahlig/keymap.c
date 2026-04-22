@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *         |------+------+-----------------------+------+------|
      */
     [_QWERTY] = LAYOUT_60_hhkb(
-        KC_ESC,  KC_1,        KC_2,        KC_3,        KC_4,        KC_5,        KC_6,        KC_7,        KC_8,        KC_9,        KC_0,        KC_MINS,     KC_EQL,      KC_BSLS, KC_GRV,
+        KC_GRV,  KC_1,        KC_2,        KC_3,        KC_4,        KC_5,        KC_6,        KC_7,        KC_8,        KC_9,        KC_0,        KC_MINS,     KC_EQL,      KC_BSLS, KC_DEL,
         KC_TAB,  KC_Q,        KC_W,        KC_E,        KC_R,        KC_T,        KC_Y,        KC_U,        KC_I,        KC_O,        KC_P,        KC_LBRC,     KC_RBRC,     KC_BSPC,
         KC_CESC, KC_A,        KC_S,        KC_D,        KC_F,        KC_G,        KC_H,        KC_J,        KC_K,        KC_L,        KC_SCLN,     KC_QUOT,     HYPENT,
         KC_LSFT, KC_Z,        KC_X,        KC_C,        KC_V,        KC_B,        KC_N,        KC_M,        KC_COMM,     KC_DOT,      KC_SLSH,     KC_RSFT,     MO(_FN),
@@ -107,14 +107,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, HYPR(KC_F1), HYPR(KC_F2), HYPR(KC_F3), HYPR(KC_F4), HYPR(KC_F5), HYPR(KC_F6), HYPR(KC_F7), HYPR(KC_F8), _______,     _______,     _______,     _______,     _______,
         KC_ESC,  HYPR(KC_F9), HYPR(KC_F10), HYPR(KC_F11), HYPR(KC_F12), HYPR(KC_F13), HYPR(KC_F14), HYPR(KC_F15), HYPR(KC_F16), _______,     _______,     _______,     _______,
         _______, HYPR(KC_F17), HYPR(KC_F18), HYPR(KC_F19), HYPR(KC_F20), HYPR(KC_F21), HYPR(KC_F22), HYPR(KC_F23), HYPR(KC_F24), _______,     _______,     _______,     _______,
-                 QK_BOOT,     _______,                                               KC_SPC,                                                _______,     _______),
+                 _______,     _______,                                               KC_SPC,                                                _______,     _______),
 
     /* Code Layer
      * Encoder/lighting controls plus persistent default-layer selection.
      */
     [_CODE] = LAYOUT_60_hhkb(
-        QK_BOOT, EF_DEC,      EF_INC,      H1_DEC,      H1_INC,      H2_DEC,      H2_INC,      XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     BR_DEC,      BR_INC,      XXXXXXX, XXXXXXX,
-        XXXXXXX, QWERTY,      GAME,        S1_DEC,      S1_INC,      S2_DEC,      S2_INC,      XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     ES_DEC,      ES_INC,      XXXXXXX,
+        QK_BOOT, XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,      XXXXXXX, XXXXXXX,
+        XXXXXXX, QWERTY,      GAME,        XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,      XXXXXXX,
         XXXXXXX, XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,
         XXXXXXX, XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,     XXXXXXX,
                  XXXXXXX,     XXXXXXX,                                              XXXXXXX,                                             XXXXXXX,     XXXXXXX)
